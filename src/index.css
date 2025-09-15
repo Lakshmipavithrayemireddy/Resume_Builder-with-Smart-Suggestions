@@ -1,0 +1,248 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AI Resume Builder Design System - Professional & Modern */
+
+@layer base {
+  :root {
+    /* Core Background & Text */
+    --background: 0 0% 100%;
+    --foreground: 218 27% 12%;
+    
+    /* Cards & Surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 218 27% 12%;
+    
+    /* Popovers */
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 27% 12%;
+    
+    /* Primary Brand - Professional Navy */
+    --primary: 218 89% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 218 89% 45%;
+    
+    /* Secondary - Clean Light */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 218 27% 12%;
+    
+    /* Muted Text & Backgrounds */
+    --muted: 220 14% 96%;
+    --muted-foreground: 218 11% 50%;
+    
+    /* Accent - Vibrant Blue */
+    --accent: 212 100% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Success - Professional Green */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning - Professional Orange */
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 218 89% 35%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(218 89% 35%), hsl(218 89% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(218 89% 35%) 0%, hsl(212 100% 60%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(218 89% 35% / 0.15);
+    --shadow-glow: 0 0 40px hsl(218 89% 45% / 0.2);
+    --shadow-card: 0 4px 16px -4px hsl(218 27% 12% / 0.08);
+    
+    /* Layout */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode palette - Professional dark theme */
+    --background: 218 27% 8%;
+    --foreground: 220 14% 96%;
+    
+    --card: 218 27% 10%;
+    --card-foreground: 220 14% 96%;
+    
+    --popover: 218 27% 10%;
+    --popover-foreground: 220 14% 96%;
+    
+    --primary: 218 89% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 218 89% 55%;
+    
+    --secondary: 218 20% 18%;
+    --secondary-foreground: 220 14% 96%;
+    
+    --muted: 218 20% 18%;
+    --muted-foreground: 218 11% 70%;
+    
+    --accent: 212 100% 65%;
+    --accent-foreground: 0 0% 100%;
+    
+    --success: 142 76% 42%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+    
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 218 20% 18%;
+    --input: 218 20% 18%;
+    --ring: 218 89% 45%;
+    
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(218 89% 35%), hsl(218 89% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(218 89% 25%) 0%, hsl(212 100% 50%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(218 27% 8%) 0%, hsl(218 27% 10%) 100%);
+    
+    /* Dark mode shadows */
+    --shadow-elegant: 0 10px 30px -10px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(218 89% 45% / 0.3);
+    --shadow-card: 0 4px 16px -4px hsl(0 0% 0% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-background to-secondary/20 text-foreground font-sans antialiased;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer components {
+  /* Animation classes */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  /* Custom shadows */
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+}
+
+@layer utilities {
+  /* Text gradients */
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-hero {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.5);
+  }
+}
